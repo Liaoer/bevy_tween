@@ -18,19 +18,17 @@ resolver = "2"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies.bevy]
-version = "0.16.0-rc.5"
+path = "../../bevy_engine"
 default-features = false
 features = ["std"]
 
 [dependencies.bevy_math]
-version = "0.16.0-rc.5"
+path = "../../bevy_engine/crates/bevy_math"
 default-features = false
 features = ["curve", "serialize"]
 
 [dependencies.bevy_time_runner]
-version = "0.3.0"
-git = "https://github.com/Multirious/bevy_time_runner"
-branch = "bevy-v0.16.0" 
+path = "../bevy_time_runner"
 
 [dependencies.serde]
 version = "1"
@@ -48,11 +46,12 @@ version = "0.8.0" # Has no bevy v0.16.0-rc.4 yet
 optional = true 
 
 [dev-dependencies]
-bevy-inspector-egui = "0.30.0" # Has no bevy v0.16.0-rc.4 yet
+#bevy-inspector-egui = "0.30.0" # Has no bevy v0.16.0-rc.4 yet
+bevy-inspector-egui={path="../bevy_inspector_egui/crates/bevy-inspector-egui"}
 rand = "0.9.0"
 
 [dev-dependencies.bevy]
-version = "0.16.0-rc.5"
+path = "../../bevy_engine"
 default-features = false
 features = [
     "bevy_window",
